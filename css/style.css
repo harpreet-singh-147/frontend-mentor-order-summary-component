@@ -1,1 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
 
+:root {
+  /* Primary */
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  /* Neutral */
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --white: #fff;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+button {
+  display: block;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  position: relative;
+  background: url('../images/pattern-background-desktop.svg');
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 450px;
+  height: auto;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+}
+
+.card {
+  width: 450px;
+  height: 478px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
+  padding: 0 4.5em;
+}
+
+.card__header {
+  margin-top: 4.5rem;
+}
+
+.card__heading-h1 {
+  font-size: 2.84rem;
+  font-weight: 900;
+}
+
+.card__main-text {
+  margin-top: 1.7rem;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--desaturated-blue);
+}
+
+.card__annual-plan-container {
+  margin-top: 2.46rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--very-pale-blue);
+  border-radius: 1em;
+  padding: 2.1em 2.6em;
+}
+
+.card__annual-plan-price-container {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.card__annual-plan-price-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card__annual-plan-heading {
+  font-size: 1.65rem;
+  font-weight: 900;
+}
+
+.card__annual-price {
+  font-size: 1.65rem;
+  color: var(--desaturated-blue);
+}
+
+.card__annual-plan-change {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bright-blue);
+  transition: all 0.3s ease;
+}
+
+.card__annual-plan-change:hover {
+  text-decoration: none;
+  filter: brightness(180%);
+}
+
+.card__btn-payment {
+  margin: 3.25rem auto 0 auto;
+  padding: 1.58rem;
+  font-size: 1.55rem;
+  font-weight: 900;
+  width: 99%;
+  border-radius: 1rem;
+  background: var(--bright-blue);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card__btn-payment:hover {
+  filter: brightness(180%);
+}
+
+.card__btn-cancel {
+  margin: 3.3rem auto 0 auto;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 1.58rem;
+  font-weight: 900;
+  color: var(--desaturated-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card__btn-cancel:hover {
+  color: var(--dark-blue);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-image: url('../design/desktop-design.jpg'); */
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 475px) {
+  .main {
+    display: block;
+    margin-top: 5rem;
+  }
+  .img-container {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .img-container {
+    width: 90%;
+  }
+  .card {
+    width: 90%;
+    padding: 0 2.5em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .card__annual-plan-container {
+    padding: 2.1em 1.8em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .card {
+    padding: 0 1.5em;
+    height: 550px;
+  }
+  .card__annual-plan-container {
+    flex-direction: column;
+    gap: 0;
+    padding: 2.1em 1em;
+  }
+
+  .card__annual-plan-price-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .card__annual-plan-icon img {
+    width: 6rem;
+  }
+
+  .card__annual-plan-price-details {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 305px) {
+  .img-container {
+    width: 97%;
+  }
+
+  .card {
+    width: 97%;
+  }
+}
